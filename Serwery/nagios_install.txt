@@ -1,0 +1,4 @@
+aptitude install libnagios-plugin-perl
+chmod +x /usr/lib/nagios/plugins/check_nrpe
+chmod +x /usr/lib/nagios/plugins/check_ssl
+chmod +x /usr/lib/nagios/plugins/check_ssl_cert
