@@ -1,0 +1,5 @@
+1200,2400,4800,9600,19200,38400,57600, 74880,115200
+
+
+74880 - w trybie programowania (GPIO0 - GND)
+115200 - ESP12E/F z pudełka (w trybie AT)

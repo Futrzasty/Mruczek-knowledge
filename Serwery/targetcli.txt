@@ -1,0 +1,44 @@
+aptitude install python-dbus python-pyparsing python-setuptools python-gi python-urwid
+
+wget -c https://github.com/open-iscsi/targetcli-fb/archive/master.zip && unzip master.zip && rm master.zip
+wget -c https://github.com/agrover/rtslib-fb/archive/master.zip && unzip master.zip && rm master.zip
+wget -c https://github.com/open-iscsi/configshell-fb/archive/master.zip && unzip master.zip && rm master.zip
+
+W każdym folderze:
+./setup.py build && ./setup.py install
+
+--------------------------------------------------------------------------------
+ First of all, it is possible to use it in Jessie, I am using it right now. Now, for the other issues:
+
+    It was removed from Jessie due to a bug which caused some upgrade issues from the previous versions (https://tracker.debian.org/news/671121)
+
+    You don't have to use 'targetcli', you can pretty much do everything from sysfs. However, it is obviously easier to manage using targetcli.
+
+    Finally, the official version is from Datera (https://github.com/Datera/targetcli). However, it is recommended to use the forked versions: https://github.com/agrover/targetcli-fb, https://github.com/agrover/rtslib-fb, https://github.com/agrover/configshell-fb
+
+Hope this helps.
+
+    permalinkembedzapisz
+
+[–]pannkakorna[S] 1 punkt 2 lata temu*
+
+Thanks, I'll try that out tonight.
+
+Edit: I got it to work. To be honest I much preferred the configuration file of IET to the weird targetcli shell, but after some fiddling, I got it to work with a Windows initiator. I may write up my experience into a short tutorial/article.
+
+    permalinkembedzapiszrodzic
+
+[–]pannkakorna[S] 1 punkt 2 lata temu
+
+For anyone curious, I did end up getting this installed on my Jessie server. I use it to serve out ZFS zvol's across my LAN.
+
+It was a lot easier than I expected, the hardest part being the somewhat confusing targetcli tool:
+
+    I cloned the three repos mentioned by /u/dotnix,
+
+    Ran inside of each project folder:
+
+    sudo ./setup.py build && sudo ./setup.py install
+
+    Then I just partially followed this guide for setting up the targets.
+

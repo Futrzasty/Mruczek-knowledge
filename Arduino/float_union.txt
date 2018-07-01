@@ -1,0 +1,12 @@
+typedef union {
+ float floatingPoint;
+ byte binary[4];
+} binaryFloat;
+
+void setup() {
+ // put your setup code here, to run once:
+ binaryFloat hi;
+ hi.floatingPoint = -11.7;
+ Serial.begin(115200);
+ Serial.write(hi.binary,4);
+}

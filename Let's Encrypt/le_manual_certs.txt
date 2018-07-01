@@ -1,0 +1,15 @@
+aptitude update
+aptitude upgrade
+apt-get install certbot -t jessie-backports
+vim /etc/apt/sources.list
+aptitude update
+apt-get install certbot -t jessie-backports
+certbot
+certbot --manual
+certbot certonly --manual
+certbot certonly --manual
+cd /etc/letsencrypt/live/anthro.pl/
+ll
+cat cert.pem
+cat privkey.pem
+cat chain.pem
